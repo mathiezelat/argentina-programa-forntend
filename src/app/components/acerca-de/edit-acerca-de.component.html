@@ -1,0 +1,127 @@
+<app-header></app-header>
+<div class="container m-auto" *ngIf="persona">
+  <div class="p-5 m-5 bg-blue-400 rounded text-white">
+    <h1 class="text-xl font-bold">
+      Argentina programa -
+      <span class="font-semibold">Actualizar perfil</span>
+    </h1>
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+      <div class="flex flex-col">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="persona.name"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="apellido">Apellido</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          [(ngModel)]="persona.lastName"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="fecha-de-nacimiento">Fecha de nacimiento</label>
+        <input
+          type="text"
+          id="fecha-de-nacimiento"
+          name="fecha-de-nacimiento"
+          [(ngModel)]="persona.dateOfBirth"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="nacionalidad">Nacionalidad</label>
+        <input
+          type="text"
+          id="nacionalidad"
+          name="nacionalidad"
+          [(ngModel)]="persona.nationality"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="email">Correo electrónico</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          [(ngModel)]="persona.email"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="acerca-de-mi">Acerca de mí</label>
+        <input
+          type="text"
+          id="acerca-de-mi"
+          name="acerca-de-mi"
+          [(ngModel)]="persona.aboutMe"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="location">Ubicación</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          [(ngModel)]="persona.location"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="ocupacion">Ocupación</label>
+        <input
+          type="text"
+          id="ocupacion"
+          name="ocupacion"
+          [(ngModel)]="persona.occupation"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="portada">Portada</label>
+        <input
+          type="text"
+          id="portada"
+          name="portada"
+          [(ngModel)]="persona.coverImage"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="imagen-de-perfil">Imagen de perfíl</label>
+        <input
+          type="text"
+          id="imagen-de-perfil"
+          name="imagen-de-perfil"
+          [(ngModel)]="persona.profilePicture"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <button
+        class="w-full mt-5 rounded flex justify-center items-center border-2 text-blue-400 font-mono font-semibold bg-black hover:bg-transparent hover:text-black border-black py-2 transition"
+        type="submit"
+      >
+        Actualizar perfil
+      </button>
+    </form>
+  </div>
+</div>

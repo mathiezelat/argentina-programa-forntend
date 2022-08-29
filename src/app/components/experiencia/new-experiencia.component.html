@@ -1,0 +1,83 @@
+<app-header></app-header>
+<div class="container m-auto">
+  <div class="p-5 m-5 bg-blue-400 rounded text-white">
+    <h1 class="text-xl font-bold">
+      Argentina programa -
+      <span class="font-semibold">Nueva experiencia</span>
+    </h1>
+    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+      <div class="flex flex-col">
+        <label for="name-experiencia">Nombre del rubro</label>
+        <input
+          type="text"
+          id="name-experiencia"
+          name="name-experiencia"
+          [(ngModel)]="name"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="description-experiencia">Descripción de la tarea</label>
+        <input
+          type="text"
+          id="description-experiencia"
+          name="description-experiencia"
+          [(ngModel)]="description"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="company-experiencia">Nombre de la empresa</label>
+        <input
+          type="text"
+          id="company-experiencia"
+          name="company-experiencia"
+          [(ngModel)]="company"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="period-experiencia">Periodo</label>
+        <input
+          type="text"
+          id="period-experiencia"
+          name="period-experiencia"
+          [(ngModel)]="period"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="position-experiencia">Nombre de la posición</label>
+        <input
+          type="text"
+          id="position-experiencia"
+          name="position-experiencia"
+          [(ngModel)]="position"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="logo-company">Logo</label>
+        <input
+          type="text"
+          id="logo-company"
+          name="logo-company"
+          [(ngModel)]="logo"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <button
+        class="w-full mt-5 rounded flex justify-center items-center border-2 text-blue-400 font-mono font-semibold bg-black hover:bg-transparent hover:text-black border-black py-2 transition"
+        type="submit"
+      >
+        Agregar experiencia
+      </button>
+    </form>
+  </div>
+</div>

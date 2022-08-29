@@ -1,0 +1,24 @@
+<div class="bg-blue-400">
+  <div class="container mx-auto flex justify-between items-center">
+    <a [routerLink]="'/'">
+      <app-logo-ap></app-logo-ap>
+    </a>
+    <div class="flex gap-2">
+      <app-social></app-social>
+      <a
+        [routerLink]="'/login'"
+        class="rounded flex justify-center items-center border-2 text-white hover:text-blue-400 hover:bg-black font-mono font-semibold border-white hover:border-black px-4 transition"
+        *ngIf="!isLogged"
+      >
+        INGRESO
+      </a>
+      <button
+        (click)="onLogout()"
+        class="rounded flex justify-center items-center border-2 text-white hover:text-blue-400 hover:bg-black font-mono font-semibold border-white hover:border-black px-4 transition"
+        *ngIf="isLogged"
+      >
+        CERRAR SESIÓN
+      </button>
+    </div>
+  </div>
+</div>

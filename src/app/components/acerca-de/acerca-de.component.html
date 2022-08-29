@@ -1,0 +1,69 @@
+<div class="container mx-auto">
+  <div
+    class="container max-h-96 mx-auto mt-5 rounded-tl rounded-tr overflow-hidden"
+  >
+    <img
+      class="w-full h-full object-center object-cover"
+      [src]="persona.coverImage"
+      alt="Banner"
+    />
+  </div>
+  <div class="flex flex-col gap-5">
+    <div
+      class="flex flex-col items-start justify-center flex-none border p-2 rounded-bl rounded-br border-gray-100"
+    >
+      <div class="flex justify-center items-center gap-2">
+        <div class="w-20 h-20">
+          <img
+            class="object-cover w-full h-full rounded-full"
+            [src]="persona.profilePicture"
+            alt="Profile Picture"
+          />
+        </div>
+        <div>
+          <div class="flex">
+            <p class="font-semibold text-xl">
+              {{ persona.name }} {{ persona.lastName }}
+            </p>
+            <button routerLink="/editar-acerca-de" *ngIf="isLogged">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z"
+                />
+              </svg>
+            </button>
+          </div>
+          <p>{{ persona.occupation }}</p>
+          <p class="text-sm">{{ persona.location }} - {{ persona.email }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="border p-2 rounded border-gray-100">
+      <div class="flex">
+        <p class="font-bold text-xl">Acerca de mí</p>
+        <button routerLink="/editar-acerca-de" *ngIf="isLogged">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path
+              d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z"
+            />
+          </svg>
+        </button>
+      </div>
+      <p>
+        {{ persona.aboutMe }}
+      </p>
+    </div>
+  </div>
+</div>

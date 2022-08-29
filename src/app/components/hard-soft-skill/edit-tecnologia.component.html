@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="container m-auto" *ngIf="tec">
+  <div class="p-5 m-5 bg-blue-400 rounded text-white">
+    <h1 class="text-xl font-bold">
+      Argentina programa -
+      <span class="font-semibold">Actualizar tecnologia</span>
+    </h1>
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+      <div class="flex flex-col">
+        <label for="name-tecnologia">Nombre de la tecnologia</label>
+        <input
+          type="text"
+          id="name-tecnologia"
+          name="name-tecnologia"
+          [(ngModel)]="tec.name"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="percent-tecnologia">Porcentaje de la tecnologia</label>
+        <input
+          type="text"
+          id="percent-tecnologia"
+          name="percent-tecnologia"
+          [(ngModel)]="tec.percent"
+          required
+          class="rounded text-black border-0"
+        />
+      </div>
+      <button
+        class="w-full mt-5 rounded flex justify-center items-center border-2 text-blue-400 font-mono font-semibold bg-black hover:bg-transparent hover:text-black border-black py-2 transition"
+        type="submit"
+      >
+        Actualizar tecnologia
+      </button>
+    </form>
+  </div>
+</div>

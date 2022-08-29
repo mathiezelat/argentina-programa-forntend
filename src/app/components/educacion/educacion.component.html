@@ -1,0 +1,57 @@
+<div class="container mx-auto mt-5">
+  <div class="border p-2 rounded border-gray-100">
+    <div class="flex items-center">
+      <p class="font-bold text-xl">Educacion</p>
+      <button routerLink="/nueva-educacion" *ngIf="isLogged">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6 6V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"
+          />
+        </svg>
+      </button>
+    </div>
+    <ul class="flex flex-col gap-2">
+      <li *ngFor="let edu of educacion">
+        <div class="flex items-center">
+          <p class="text-lg font-medium">
+            {{ edu.institution }} - {{ edu.name }}
+          </p>
+          <button routerLink="/editar-educacion/{{ edu.id }}" *ngIf="isLogged">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z"
+              />
+            </svg>
+          </button>
+          <button (click)="deleteEducacion(edu.id)" *ngIf="isLogged">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z"
+              />
+            </svg>
+          </button>
+        </div>
+        <p class="text-sm text-gray-700">{{ edu.description }}</p>
+        <p class="text-gray-700">{{ edu.period }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
